@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        /* 全局样式与背景 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e0f2e9 0%, #a3d9c9 50%, #6b9e8d 100%);
+            padding: 20px;
+            color: #2c3e35;
+        }
+
+        /* 玻璃拟态卡片 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 头像样式 */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            
+        }
+
+        /* 打字机签名 */
+        .signature-container {
+            min-height: 60px;
+            font-size: 1.1rem;
+            color: #3b5c4e;
+            margin-bottom: 30px;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            background-color: #3b5c4e;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* 联系方式按钮 */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-coolapk { background-color: #11b379; }
+        .btn-bilibili { background-color: #fb7299; }
+        .btn-qq { background-color: #12b7f5; }
+
+        /* 详细简介 */
+        .about-me {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 25px;
+        }
+        .about-me h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #a3d9c9;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .about-me p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #3b5c4e;
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(107, 158, 141, 0.2);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        
+        <img src="avatar.png" alt="Avatar" class="avatar">
+        
+        <!-- 打字机签名区域 -->
+        <div class="signature-container">
+            <div id="line1"></div>
+            <div id="line2"></div>
+        </div>
+
+        <!-- 联系按钮 -->
+        <div class="contact-links">
+            <a href="https://www.coolapk.com/u/3086407" target="_blank" class="btn btn-coolapk">酷安</a>
+            <a href="https://space.bilibili.com/318842461" target="_blank" class="btn btn-bilibili">哔哩哔哩</a>
+            
+            <a href="javascript:void(0);" onclick="alert('我的QQ号: 2934301923')" class="btn btn-qq">QQ</a>
+        </div>
+
+        <!-- 详细介绍 -->
+        <div class="about-me">
+            <h3>关于我</h3>
+            <p>
+                <span class="tag">INTP-J</span>
+                <span class="tag">数码极客</span>
+            </p>
+            <p>👋 你好！我是一个理性的观察者，也是一个充满好奇心的 INTP-J。逻辑与灵感在我的世界里交织，我喜欢探索事物背后的运行原理。</p>
+            <p>💻 作为一个硬核数码极客，我热衷于各种科技产品、刷机、折腾软件硬件，享受代码与工具带来的效率提升。</p>
+            <p>📷 镜头是我的另一只眼睛，喜欢在街头和自然中捕捉光影的瞬间；🎸 拨动吉他琴弦时，则是我最放松、最感性的时刻。</p>
+            <p>“求知若渴，虚心若愚”是我的人生信条。欢迎交流数码、摄影，或是随便聊聊。</p>
+        </div>
+    </div>
+
+    <script>
+        // 打字机效果逻辑
+        const line1Text = "求知若渴 虚心若愚";
+        const line2Text = "Stay Hungry, Stay Foolish";
+        const line1Element = document.getElementById("line1");
+        const line2Element = document.getElementById("line2");
+
+        let i = 0;
+        let j = 0;
+
+        function typeLine1() {
+            if (i < line1Text.length) {
+                line1Element.innerHTML += line1Text.charAt(i);
+                i++;
+                setTimeout(typeLine1, 100);
+            } else {
+                // 第一行打完后，增加光标换行，开始打第二行
+                line1Element.innerHTML += "<span class='cursor'></span><br>";
+                setTimeout(typeLine2, 300);
+            }
+        }
+
+        function typeLine2() {
+            if (j < line2Text.length) {
+                line2Element.innerHTML += line2Text.charAt(j);
+                j++;
+                setTimeout(typeLine2, 80);
+            } else {
+                line2Element.innerHTML += "<span class='cursor'></span>";
+            }
+        }
+
+        // 页面加载后延迟1秒开始打字
+        window.onload = () => {
+            setTimeout(typeLine1, 500);
+        };
+    </script>
+</body>
+</html>
